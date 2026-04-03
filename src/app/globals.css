@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy-900: #1a1a2e;
+  --color-navy-800: #16213e;
+  --color-navy-700: #1a2744;
+  --color-forest: #0f3460;
+  --color-accent: #e2b714;
+  --color-accent-light: #f0d060;
+  --color-light: #f8f9fa;
+  --color-light-200: #e9ecef;
+  --color-light-300: #dee2e6;
+  --font-sans: "Noto Sans JP", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333;
+  background: #ffffff;
+}
