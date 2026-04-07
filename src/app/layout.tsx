@@ -1,16 +1,34 @@
 import type { Metadata } from "next";
+import Script from "next/script";
+import FloatingCTA from "@/components/FloatingCTA";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AI実践研修プログラム | 株式会社fan-mily",
   description:
-    "欲しいものを作りながら学ぶ5日間のAI実践研修。AIエージェント構築からアプリ開発まで、実務直結の法人向けDX・AI研修プログラム。人材開発支援助成金対応。",
+    "欲しいものを作りながら学ぶ5日間。週45時間分の業務自動化を実証済み。助成金対応で実質28万円から。",
   openGraph: {
     title: "AI実践研修プログラム | 株式会社fan-mily",
     description:
-      "欲しいものを作りながら学ぶ5日間のAI実践研修。法人向けDX・AI研修プログラム。",
+      "欲しいものを作りながら学ぶ5日間。週45時間分の業務自動化を実証済み。助成金対応で実質28万円から。",
     type: "website",
     locale: "ja_JP",
+    url: "https://ai-kenshu.fan-mily.com",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AI実践研修プログラム | 株式会社fan-mily",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI実践研修プログラム | 株式会社fan-mily",
+    description:
+      "欲しいものを作りながら学ぶ5日間。週45時間分の業務自動化を実証済み。助成金対応で実質28万円から。",
+    images: ["/og-image.png"],
   },
 };
 
@@ -33,7 +51,22 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <FloatingCTA />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

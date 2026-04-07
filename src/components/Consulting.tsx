@@ -31,7 +31,7 @@ export default function Consulting() {
   return (
     <section id="consulting" className="py-20 sm:py-28 bg-light">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">
             SUPPORT
           </span>
@@ -41,6 +41,58 @@ export default function Consulting() {
           <p className="text-gray-500 mt-3 text-sm max-w-xl mx-auto">
             研修後のフォローアップ。AIツールの保守・プロンプト改善・バグ修正・ツール連携をサポート
           </p>
+        </div>
+
+        {/* Intro message */}
+        <div className="text-center mb-10">
+          <p className="text-2xl sm:text-3xl font-black text-navy-900 mb-3">
+            研修は入口。本番は伴走。
+          </p>
+          <p className="text-gray-600 text-sm max-w-2xl mx-auto leading-relaxed">
+            5日間の研修でAIの基礎を習得した後、実際の業務に定着させるには継続的な支援が不可欠です。
+            エンジニア顧問が御社の業務に寄り添い、AI活用を「一時的な研修」から「日常の武器」へ変えます。
+          </p>
+        </div>
+
+        {/* 研修→顧問パッケージ flow */}
+        <div className="bg-gradient-to-r from-navy-900 to-forest rounded-2xl p-6 sm:p-8 mb-12">
+          <h3 className="text-lg font-bold text-white mb-1 text-center">
+            研修 → 顧問パッケージ
+          </h3>
+          <p className="text-white/60 text-xs text-center mb-6">
+            研修から伴走まで一気通貫でサポート
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            {[
+              { label: "研修（5日間）", sub: "基礎習得" },
+              { label: "業務ヒアリング", sub: "課題の特定" },
+              { label: "AI導入", sub: "ツール構築" },
+              { label: "月次伴走サポート", sub: "定着・改善" },
+            ].map((step, i) => (
+              <div key={step.label} className="flex items-center gap-3 sm:gap-4">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 text-center min-w-[120px]">
+                  <p className="text-white font-bold text-sm">{step.label}</p>
+                  <p className="text-white/50 text-xs mt-1">{step.sub}</p>
+                </div>
+                {i < 3 && (
+                  <svg
+                    className="w-5 h-5 text-accent shrink-0 hidden sm:block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

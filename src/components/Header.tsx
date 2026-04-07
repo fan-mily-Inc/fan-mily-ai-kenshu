@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const navLinks = [
   { href: "#concept", label: "コンセプト" },
+  { href: "#cases", label: "導入事例" },
   { href: "#programs", label: "研修内容" },
   { href: "#curriculum", label: "カリキュラム" },
   { href: "#pricing", label: "料金" },

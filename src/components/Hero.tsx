@@ -34,7 +34,7 @@ export default function Hero() {
         <p className="text-base sm:text-lg md:text-xl text-white/80 font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
           自社で9体のAIエージェントを構築し
           <br className="hidden sm:block" />
-          年間2,350時間を削減した東工大卒の現役エンジニアが、
+          週45時間分の業務を自動化した東工大卒の現役エンジニアが、
           <br className="hidden sm:block" />
           御社の業務課題を題材に、動くシステムを作りながら教えます。
         </p>

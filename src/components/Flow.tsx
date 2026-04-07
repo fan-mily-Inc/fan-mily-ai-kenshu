@@ -77,11 +77,13 @@ export default function Flow() {
             まずは無料相談から
           </h3>
           <p className="text-white/70 text-sm mb-8 max-w-md mx-auto">
-            御社の課題やご要望をお聞かせください。最適な研修プランをご提案いたします。
+            簡単なヒアリングフォームにご回答いただくだけ。御社に最適なAI活用プランをご提案いたします。
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4">
             <a
-              href="mailto:h.matsuda@fan-mily.com"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf6b4M57AwpNQmrbKEAQ1BRhct-gIiJtV89ITxXWvW2t9Qp5w/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-navy-900 font-bold text-base px-8 py-4 rounded-full transition-all hover:scale-105"
             >
               <svg
@@ -95,13 +97,13 @@ export default function Flow() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 />
               </svg>
-              メールで相談する
+              ヒアリングフォームに回答する
             </a>
-            <span className="text-white/50 text-sm">
-              h.matsuda@fan-mily.com
+            <span className="text-white/40 text-xs">
+              回答後、面談予約のご案内をお送りします
             </span>
           </div>
         </div>

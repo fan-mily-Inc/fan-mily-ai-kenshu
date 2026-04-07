@@ -1,19 +1,27 @@
 const credentials = [
   {
     icon: "🎓",
-    label: "東京工業大学（現・東京科学大学）第4類工学部卒",
+    label: "東京工業大学（現・東京科学大学）第4類工学部 2020年卒",
+  },
+  {
+    icon: "💻",
+    label: "学生時代からIT企業でアプリ開発の実務経験を積む",
+  },
+  {
+    icon: "🚀",
+    label: "新卒1年目から都内ベンチャーでPM兼エンジニア → 渋谷のIT企業でテックリード",
+  },
+  {
+    icon: "🤖",
+    label: "現在はAIエンジニアとして開発の最前線で活動中",
   },
   {
     icon: "🏢",
     label: "株式会社fan-mily 代表取締役",
   },
   {
-    icon: "🤖",
-    label: "自社で9体のAIエージェントを構築・運用中",
-  },
-  {
-    icon: "⏱️",
-    label: "AI活用で年間2,350時間の業務自動化を実現",
+    icon: "⚡",
+    label: "自社に9体のAIエージェントを構築し、週45時間分の業務を自動化",
   },
 ];
 
@@ -87,9 +95,10 @@ export default function Instructor() {
           <div className="md:col-span-3 space-y-8">
             <div className="bg-navy-900/5 rounded-2xl p-6 sm:p-8">
               <p className="text-navy-900 font-medium leading-relaxed text-sm sm:text-base">
-                「私自身が毎日AIエージェントを構築し、運用し、改善しています。
-                研修では、その実体験をもとに、御社の業務課題を題材にして
-                "動くシステム"を一緒に作ります。
+                「東工大を卒業後、PM・テックリード・AIエンジニアとして
+                常に開発の最前線に立ってきました。今も毎日AIエージェントを
+                構築し、運用し、改善しています。研修では、その実体験をもとに
+                御社の業務課題を題材にして"動くシステム"を一緒に作ります。
                 座学ではなく、隣に座って手を動かす研修です。」
               </p>
             </div>

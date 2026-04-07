@@ -105,6 +105,7 @@ export default function Footer() {
               <ul className="grid grid-cols-2 gap-3 text-sm text-white/60">
                 {[
                   { href: "#concept", label: "コンセプト" },
+                  { href: "#cases", label: "導入事例" },
                   { href: "#programs", label: "研修内容" },
                   { href: "#curriculum", label: "カリキュラム" },
                   { href: "#pricing", label: "料金" },

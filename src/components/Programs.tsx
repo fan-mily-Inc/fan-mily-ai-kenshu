@@ -1,17 +1,17 @@
 export default function Programs() {
   return (
     <section id="programs" className="py-20 sm:py-28 bg-light">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">
             PROGRAMS
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 leading-snug">
-            2つの研修プログラム
+            3つの研修プログラム
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Program 1: AI Agent */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="bg-gradient-to-r from-navy-900 to-forest p-6 sm:p-8">
@@ -224,6 +224,84 @@ export default function Programs() {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Program 3: AI活用マスター研修 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-accent/90 to-accent/70 p-6 sm:p-8">
+              <span className="inline-block bg-navy-900/20 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-3">
+                PROGRAM 3
+              </span>
+              <h3 className="text-2xl font-bold text-navy-900 mb-2">
+                AI活用マスター研修
+              </h3>
+              <p className="text-navy-900/70 text-sm">
+                エンジニア不要。現場スタッフがAIを使いこなすための実践プログラム
+              </p>
+            </div>
+            <div className="p-6 sm:p-8 space-y-6">
+              <div>
+                <h4 className="font-bold text-navy-900 text-sm mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xs" aria-hidden="true">
+                    1
+                  </span>
+                  プロンプトエンジニアリング基礎
+                </h4>
+                <p className="text-gray-500 text-sm ml-8">
+                  質問力を鍛える。AIに的確な指示を出し、望む結果を引き出す技術を習得
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-navy-900 text-sm mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xs" aria-hidden="true">
+                    2
+                  </span>
+                  業務自動化設計
+                </h4>
+                <div className="flex flex-wrap gap-2 ml-8">
+                  {["メール分類", "書類作成", "データ集計"].map((item) => (
+                    <span
+                      key={item}
+                      className="bg-forest/5 text-forest text-xs px-3 py-1.5 rounded-full border border-forest/10"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-navy-900 text-sm mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xs" aria-hidden="true">
+                    3
+                  </span>
+                  AIエージェント活用
+                </h4>
+                <p className="text-gray-500 text-sm ml-8">
+                  AI秘書の構築と運用。日常業務をAIに任せる仕組みを作る
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-navy-900 text-sm mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xs" aria-hidden="true">
+                    4
+                  </span>
+                  業種別ユースケース実践
+                </h4>
+                <div className="flex flex-wrap gap-2 ml-8">
+                  {["医療", "農業", "製造", "サービス業"].map((item) => (
+                    <span
+                      key={item}
+                      className="bg-accent/10 text-accent text-xs font-medium px-3 py-1.5 rounded-full"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

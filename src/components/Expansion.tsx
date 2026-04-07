@@ -1,28 +1,25 @@
 const plans = [
   {
-    name: "バックオフィスプラン",
-    desc: "社内Wikiエージェント構築",
-    target: "総務・管理部門",
+    name: "医療・クリニック",
+    items: ["透析データ分析", "勤怠自動化", "問診AI", "請求書チェック"],
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
       </svg>
     ),
   },
   {
-    name: "AIコンサルプラン",
-    desc: "提案・伴走スキル",
-    target: "コンサル・士業",
+    name: "農業・食品",
+    items: ["SNS投稿自動生成", "冊子・記事AI作成", "在庫・出荷管理"],
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
       </svg>
     ),
   },
   {
-    name: "開発プラン",
-    desc: "AI活用開発スキル",
-    target: "社内SE・ベンダー",
+    name: "IT・サービス業",
+    items: ["AIエージェント導入", "社内ナレッジBot", "開発自動化"],
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -30,12 +27,11 @@ const plans = [
     ),
   },
   {
-    name: "SNS運用プラン",
-    desc: "AI x コンテンツ制作",
-    target: "広報・マーケ",
+    name: "製造・建設",
+    items: ["日報AI分析", "安全管理チェック", "見積書自動作成"],
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085" />
       </svg>
     ),
   },
@@ -50,10 +46,10 @@ export default function Expansion() {
             EXPANSION
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 leading-snug">
-            多段展開モデル
+            業種別AI導入プラン
           </h2>
           <p className="text-gray-500 mt-3 text-sm max-w-xl mx-auto">
-            部門・業種に合わせた4つの展開プランで、組織全体のAI活用を加速
+            業種ごとの課題に合わせたAI活用で、現場の生産性を飛躍的に向上
           </p>
         </div>
 
@@ -67,17 +63,23 @@ export default function Expansion() {
                 <div className="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center shrink-0">
                   {plan.icon}
                 </div>
-                <div>
+                <div className="flex-1">
                   <span className="text-accent text-xs font-bold">
                     PLAN {i + 1}
                   </span>
                   <h3 className="font-bold text-navy-900 text-lg mt-1">
                     {plan.name}
                   </h3>
-                  <p className="text-gray-600 text-sm mt-1">{plan.desc}</p>
-                  <span className="inline-block mt-3 bg-forest/5 text-forest text-xs font-medium px-3 py-1 rounded-full border border-forest/10">
-                    {plan.target}
-                  </span>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {plan.items.map((item) => (
+                      <span
+                        key={item}
+                        className="inline-block bg-forest/5 text-forest text-xs font-medium px-3 py-1 rounded-full border border-forest/10"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
