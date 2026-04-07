@@ -9,7 +9,6 @@ import Testimonials from "@/components/Testimonials";
 import Journey from "@/components/Journey";
 import Modules from "@/components/Modules";
 import AgentTeam from "@/components/AgentTeam";
-import Programs from "@/components/Programs";
 import Curriculum from "@/components/Curriculum";
 import Pricing from "@/components/Pricing";
 import Subsidy from "@/components/Subsidy";
@@ -35,7 +34,6 @@ export default function Home() {
         <Journey />
         <Modules />
         <AgentTeam />
-        <Programs />
         <Curriculum />
         <Pricing />
         <Subsidy />
