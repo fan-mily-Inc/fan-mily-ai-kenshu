@@ -25,19 +25,25 @@ export default function Hero() {
           株式会社fan-mily / 法人向けDX・AI研修プログラム / 2026年度版
         </p>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tight leading-tight">
-          AI実践研修プログラム
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight">
+          御社に出向いて、
+          <br />
+          一緒にAIを作る研修。
         </h1>
 
-        <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-medium mb-10">
-          欲しいものを作りながら学ぶ・5日間
+        <p className="text-base sm:text-lg md:text-xl text-white/80 font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
+          自社で9体のAIエージェントを構築し
+          <br className="hidden sm:block" />
+          年間2,350時間を削減した東工大卒の現役エンジニアが、
+          <br className="hidden sm:block" />
+          御社の業務課題を題材に、動くシステムを作りながら教えます。
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {[
-            "人材開発支援助成金OFF-JT対応",
-            "全日程・対面（出張研修）",
-            "20時間",
+            "助成金で最大75%OFF",
+            "全国出張・対面研修",
+            "研修終了時に動くシステム納品",
             "IT未経験〜経営者対象",
           ].map((tag) => (
             <span
