@@ -3,42 +3,56 @@ import { useState } from "react";
 
 const plans = [
   {
-    id: "1day",
-    label: "1Day Light",
-    badge: "入門",
-    badgeColor: "bg-sky-100 text-sky-700",
-    title: "AI活用スターター研修",
-    subtitle: "4時間 | 対面・オンライン対応",
-    target: "非エンジニア・AI初心者・60代スタッフも歓迎",
-    deliverable: "AIプロンプト集（自社業務特化版）",
-    note: "※ 4時間のため人材開発支援助成金の対象外",
-    noteColor: "text-amber-600",
+    id: "aidx",
+    label: "AIDX研修",
+    badge: "中長期伴走",
+    badgeColor: "bg-accent/10 text-accent",
+    title: "AIDX研修プラン カリキュラム例",
+    subtitle: "月額制・3ヶ月〜 | 対面＋オンライン",
+    target: "全社員・経営層・バックオフィス担当",
+    deliverable: "DX導入ロードマップ + 業務自動化フロー + AI運用体制",
+    note: "✅ 人材開発支援助成金の対象",
+    noteColor: "text-forest font-semibold",
     sessions: [
       {
-        time: "午前",
-        theme: "AI基礎 + プロンプト設計",
+        time: "Month 1",
+        theme: "SNS基盤構築 + AI基礎研修",
         content:
-          "生成AIとは何か・ChatGPT/Claude基礎操作。「役割設定・背景・出力形式」の型を使って自分でプロンプトを作る実践",
-        tag: "講義＋実習",
+          "SNSプラットフォーム開設・運用設計。AI基礎（ChatGPT/Claude）の操作研修。投稿文のAI生成フロー構築。スマホ撮影・編集の基礎",
+        tag: "研修＋構築",
       },
       {
-        time: "午後",
-        theme: "業務活用ハンズオン + プロンプト集完成",
+        time: "Month 2",
+        theme: "業務自動化 + AI活用高度化",
         content:
-          "メール下書き・議事録要約・チラシ文案をAIで生成。自社業務テーマで「明日から使えるプロンプト5本」を作成し持ち帰り",
-        tag: "実習＋演習",
+          "動画内製化（CapCut）。AIデータ分析による投稿最適化。Zapier/Makeでノーコード業務自動化フロー構築。DM・問い合わせ対応の標準化",
+        tag: "研修＋実装",
+      },
+      {
+        time: "Month 3",
+        theme: "AI自動接客 + バックオフィスDX",
+        content:
+          "LINE公式×AI相談窓口の構築。在庫DBとAIの連携。見積チェック・問い合わせ返信のAI自動化。自走化に向けた操作トレーニング",
+        tag: "実装＋自走化",
+      },
+      {
+        time: "Month 4〜",
+        theme: "定着サポート + 継続改善",
+        content:
+          "月次モニタリング。AIシステムの精度調整。最新ツール・トレンドの共有。運用の形骸化防止とスタッフのスキルアップ支援",
+        tag: "伴走",
       },
     ],
   },
   {
-    id: "5day",
-    label: "3〜5Day Standard",
-    badge: "おすすめ",
-    badgeColor: "bg-accent/10 text-accent",
-    title: "AI業務改革 + エージェント構築研修",
-    subtitle: "12〜20時間 | 対面・オンライン対応",
-    target: "業務担当者・チームリーダー・DX推進担当",
-    deliverable: "動くシステム（自動化フロー or Webアプリ or AIエージェント）+ AI推進計画書",
+    id: "appdev",
+    label: "アプリ開発研修",
+    badge: "短期集中",
+    badgeColor: "bg-purple-100 text-purple-700",
+    title: "アプリ開発研修プラン カリキュラム",
+    subtitle: "5日間・20時間 | 全日程対面",
+    target: "DX推進担当・IT担当・経営幹部",
+    deliverable: "動くWebアプリ or AIエージェント + 全社AI推進計画書",
     note: "✅ 人材開発支援助成金の対象（10時間以上）",
     noteColor: "text-forest font-semibold",
     sessions: [
@@ -46,70 +60,35 @@ const plans = [
         time: "Day 1",
         theme: "AI基礎・ツール習得",
         content:
-          "ChatGPT/Claude/画像生成AI基礎。プロンプト設計の型。業種別AI活用事例を実際に手を動かしながら体験",
+          "ChatGPT/Claude/画像生成AI基礎。プロンプト設計の型。業種別AI活用事例を手を動かしながら体験",
         tag: "講義＋実習",
       },
       {
         time: "Day 2",
         theme: "業務自動化設計",
         content:
-          "自社業務フローの棚卸し → AI削減工数を試算。Zapier/Make でノーコード自動化フローを完成させる",
+          "自社業務フローの棚卸し → AI削減工数を試算。Zapier/Makeでノーコード自動化フローを完成させる",
         tag: "実習",
       },
       {
         time: "Day 3",
         theme: "AIエージェント構築",
         content:
-          "Claude Code の基礎操作。要件定義→プロンプト設計→Discordボット作成→動作確認まで1日で完結",
+          "Claude Codeの基礎操作。要件定義→プロンプト設計→Discordボット作成→動作確認まで1日で完結",
         tag: "実習",
       },
       {
-        time: "Day 4-5",
-        theme: "Webアプリ開発 + 発表",
+        time: "Day 4",
+        theme: "Webアプリ開発",
         content:
-          "v0.dev でUI生成→Supabase DB構築→デプロイ。全社AIロードマップ策定。成果発表・修了証授与",
-        tag: "実習＋発表",
-      },
-    ],
-  },
-  {
-    id: "10day",
-    label: "10〜20Day Expert",
-    badge: "本格導入",
-    badgeColor: "bg-purple-100 text-purple-700",
-    title: "AI内製化エキスパート研修",
-    subtitle: "40〜80時間 | 対面・オンライン対応",
-    target: "DX推進リーダー・社内AI統括・経営幹部",
-    deliverable: "本番稼働AIシステム + AI展開マニュアル + 社内研修資料 + AI経営戦略書",
-    note: "✅ 人材開発支援助成金の対象（10時間以上）",
-    noteColor: "text-forest font-semibold",
-    sessions: [
-      {
-        time: "Week 1",
-        theme: "AI基礎〜AIエージェント構築",
-        content:
-          "Standardプランの全内容を実施。AI基礎・業務自動化・エージェント構築・Webアプリ開発",
-        tag: "講義＋実習",
-      },
-      {
-        time: "Week 2",
-        theme: "社内システム本格構築",
-        content:
-          "自社業務に特化したAIツールの設計・実装。認証・権限管理・外部API連携。セキュリティ実装",
+          "v0.devでUI生成→SupabaseでDB構築→Vercelでデプロイ。社内ツールや予約フォームなどを実装",
         tag: "実習",
       },
       {
-        time: "Week 3",
-        theme: "マルチエージェント + 本番プロダクト開発",
+        time: "Day 5",
+        theme: "AI推進計画・発表・修了",
         content:
-          "複数AIエージェントの連携設計。Next.js + Supabase + Stripe決済。本番グレードのAIプロダクト完成",
-        tag: "実習",
-      },
-      {
-        time: "Week 4",
-        theme: "AI展開設計 + 経営戦略 + 発表",
-        content:
-          "Change Management・社内ガイドライン策定。AI経営戦略書の策定。成果物デモ発表・修了証授与",
+          "全社AIロードマップ（6ヶ月計画）を策定。成果発表・相互フィードバック。修了証授与",
         tag: "演習＋発表",
       },
     ],
@@ -122,12 +101,14 @@ const tagColors: Record<string, string> = {
   演習: "bg-purple-50 text-purple-700",
   "演習＋発表": "bg-purple-50 text-purple-700",
   "講義＋実習": "bg-blue-50 text-blue-700",
-  "実習＋演習": "bg-green-50 text-green-700",
-  "実習＋発表": "bg-green-50 text-green-700",
+  "研修＋構築": "bg-blue-50 text-blue-700",
+  "研修＋実装": "bg-green-50 text-green-700",
+  "実装＋自走化": "bg-green-50 text-green-700",
+  伴走: "bg-amber-50 text-amber-700",
 };
 
 export default function Curriculum() {
-  const [active, setActive] = useState("5day");
+  const [active, setActive] = useState("aidx");
   const plan = plans.find((p) => p.id === active)!;
 
   return (
@@ -141,17 +122,17 @@ export default function Curriculum() {
             研修カリキュラム
           </h2>
           <p className="text-gray-500 mt-3 text-sm">
-            プランに応じて日数・内容をカスタマイズできます
+            プランに応じてカスタマイズ可能です
           </p>
         </div>
 
         {/* Tab switcher */}
-        <div className="flex justify-center gap-2 mb-10 flex-wrap">
+        <div className="flex justify-center gap-3 mb-10">
           {plans.map((p) => (
             <button
               key={p.id}
               onClick={() => setActive(p.id)}
-              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
+              className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
                 active === p.id
                   ? "bg-navy-900 text-white shadow-md"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -199,11 +180,10 @@ export default function Curriculum() {
 
         {/* Deliverable */}
         <div className="bg-navy-900 rounded-xl p-5 mb-6">
-          <p className="text-white/60 text-xs mb-1">修了物</p>
+          <p className="text-white/60 text-xs mb-1">修了物・成果物</p>
           <p className="text-white text-sm font-medium">{plan.deliverable}</p>
         </div>
 
-        {/* Subsidy note */}
         <p className={`text-center text-sm ${plan.noteColor}`}>{plan.note}</p>
       </div>
     </section>
