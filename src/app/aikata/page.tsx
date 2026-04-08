@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "アイカタ — あなたの部下が、ついにやってきた。",
+  title: "AIKATA — 推しキャラを仕事の相方に",
   description:
-    "一人社長・フリーランスのための AI秘書サービス。メール管理・バックオフィス・タスク管理を、あなたが愛着を持てるキャラクターが担当します。",
+    "秘書が欲しい・確定申告や領収書整理が面倒・案件管理が大変——あなたの押しキャラがAI同僚としてその仕事をやってくれます。",
 };
 
 /* ─────────────── shared components ─────────────── */
@@ -25,23 +25,38 @@ export default function AikataPage() {
           <div className="absolute -bottom-60 -left-40 w-[500px] h-[500px] bg-forest/20 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24">
-          <p className="text-accent font-semibold text-xs sm:text-sm tracking-widest mb-6 uppercase">
-            AI秘書サービス — アイカタ（β 事前登録受付中）
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
+          <p className="text-accent font-semibold text-xs sm:text-sm tracking-widest mb-8 uppercase">
+            AI秘書サービス — <ruby>AIKATA<rt>アイカタ</rt></ruby>
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 leading-tight tracking-tight">
-            あなたの部下が、<br />ついにやってきた。
+          {/* Character images */}
+          <div className="flex justify-center gap-3 sm:gap-5 mb-10 flex-wrap">
+            {[
+              { src: '/characters/ryoma.jpg', label: '坂本龍馬' },
+              { src: '/characters/ieyasu.jpg', label: '徳川家康' },
+              { src: '/characters/shotoku.jpg', label: '聖徳太子' },
+              { src: '/characters/fukuzawa.jpg', label: '福沢諭吉' },
+              { src: '/characters/shoin.jpg', label: '吉田松陰' },
+              { src: '/characters/anime-hero.png', label: 'AI勇者' },
+              { src: '/characters/anime-girl.png', label: 'AIアシスタント' },
+              { src: '/characters/anime-sage.png', label: 'AI賢者' },
+            ].map((c) => (
+              <div key={c.src} className="flex flex-col items-center gap-1.5">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-white/25 bg-white/10 shadow-lg">
+                  <img src={c.src} alt={c.label} className="w-full h-full object-cover object-center" />
+                </div>
+                <span className="text-white/50 text-xs">{c.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-8 leading-tight tracking-tight">
+            推しキャラを<br /><ruby className="text-accent" style={{rubyAlign: 'center'}}>AIKATA<rt style={{fontSize: '0.35em', fontWeight: 600, letterSpacing: '0.2em', color: 'inherit'}}>アイカタ</rt></ruby>にしませんか？
           </h1>
 
-          <p className="text-white/70 text-base sm:text-lg md:text-xl leading-relaxed mb-4 max-w-2xl mx-auto">
-            一人で全部、もう辞めにしませんか。<br />
-            経理も、メールも、タスク管理も。<br />
-            あなたの <span className="text-accent font-bold">"推し"</span> が、今日からあなたのために働きます。
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-3 mb-10 mt-8">
-            {["初期費用25,000円〜", "月額5,000円〜", "Discord / Slack 対応", "事前登録は無料"].map((tag) => (
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {["初期費用25,000円〜", "月額5,000円〜", "Slack / LINE / Discord 対応", "事前登録は無料"].map((tag) => (
               <span
                 key={tag}
                 className="bg-white/10 border border-white/20 text-white/80 text-xs sm:text-sm px-4 py-2 rounded-full"
@@ -80,7 +95,7 @@ export default function AikataPage() {
           <div className="text-center mb-12">
             <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">PAIN</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 leading-snug">
-              一人社長・フリーランスの、<br />誰にも言えない本音
+              一人社長・フリーランスのあるある
             </h2>
           </div>
 
@@ -110,7 +125,7 @@ export default function AikataPage() {
           <div className="text-center mb-14">
             <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">SOLUTION</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 leading-snug">
-              アイカタは、ツールじゃない。<br /><span className="text-accent">"部下"</span> です。
+              アイカタは、ツールじゃない。<br /><span className="text-accent">"同僚"</span> です。
             </h2>
           </div>
 
@@ -125,7 +140,7 @@ export default function AikataPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             {[
               { emoji: "⚔️", title: "歴史上の偉人の知性", desc: "坂本龍馬、織田信長、紫式部…現代の働き方に再解釈した偉人が部下になる" },
-              { emoji: "🎭", title: "オリジナルキャラの世界観", desc: "fan-mily 原作キャラから相棒を選んで、仕事に物語を" },
+              { emoji: "🎭", title: "オリジナルキャラの世界観", desc: "あなたがカスタマイズしたオリジナルキャラを作成。" },
               { emoji: "✨", title: "あなたが「会いたい」と思える", desc: "毎朝 PC を開くのが楽しくなる、そんな存在を目指しています" },
             ].map((item) => (
               <div key={item.title} className="bg-light rounded-xl p-6">
@@ -138,8 +153,36 @@ export default function AikataPage() {
         </div>
       </section>
 
-      {/* ── STORY ── */}
+      {/* ── DIFFERENCE ── */}
       <section className="py-20 sm:py-28 bg-light">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">WHY AIKATA</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 leading-snug">
+              他のサービスとの違い
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+              <div className="text-5xl mb-5">🗄️</div>
+              <h3 className="font-bold text-navy-900 text-lg mb-3">あなた専用のDB構築</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                汎用AIとは違い、あなたのビジネス情報をあなただけのデータベースとして蓄積。使えば使うほど、あなたの仕事を深く理解する秘書に育ちます。
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 text-center">
+              <div className="text-5xl mb-5">🎭</div>
+              <h3 className="font-bold text-navy-900 text-lg mb-3">機械的なAI秘書ではなく<br />好きなキャラと仕事ができる</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                「また話しかけたい」と思える存在と働く。愛着があるキャラが秘書になるから、毎日の仕事が少し楽しくなります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── STORY ── */}
+      <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">STORY</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-10 leading-snug">
@@ -169,7 +212,7 @@ export default function AikataPage() {
           <div className="text-center mb-14">
             <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">FEATURES</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 leading-snug">
-              あなたの部下ができること
+              あなたのアイカタができること
             </h2>
           </div>
 
@@ -308,7 +351,7 @@ export default function AikataPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">CHARACTERS</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-snug">
-            あなたが選べる "部下"
+            あなたが選べる "相方"
           </h2>
           <p className="text-white/60 text-sm mb-12">
             事前登録者にはDiscordで先行公開します
@@ -319,7 +362,7 @@ export default function AikataPage() {
               {
                 icon: "🎭",
                 title: "オリジナルキャラ",
-                sub: "fan-mily 原作",
+                sub: "あなたが作るオリジナルキャラ",
                 desc: "独自世界観の中から、あなたの相棒を。詳細は事前登録者にDiscordで先行公開。",
                 badge: "先行公開",
               },
