@@ -346,62 +346,6 @@ export default function AikataPage() {
         </div>
       </section>
 
-      {/* ── CHARACTER LINEUP ── */}
-      <section className="py-20 sm:py-28 bg-navy-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">CHARACTERS</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-snug">
-            あなたが選べる "相方"
-          </h2>
-          <p className="text-white/60 text-sm mb-12">
-            事前登録者にはDiscordで先行公開します
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "🎭",
-                title: "オリジナルキャラ",
-                sub: "あなたが作るオリジナルキャラ",
-                desc: "独自世界観の中から、あなたの相棒を。詳細は事前登録者にDiscordで先行公開。",
-                badge: "先行公開",
-              },
-              {
-                icon: "📜",
-                title: "歴史上の偉人シリーズ",
-                sub: "パブリックドメイン",
-                desc: "坂本龍馬、織田信長、紫式部 ほか。パブリックドメインの偉人を現代の働き方に再解釈。",
-              },
-              {
-                icon: "🎨",
-                title: "カスタムキャラ",
-                sub: "上位プラン",
-                desc: "あなたの好みに合わせて、性格・口調・世界観を一緒に設計します。",
-                badge: "上位プラン",
-              },
-            ].map((item) => (
-              <div key={item.title} className="bg-white/5 border border-white/10 rounded-2xl p-7 text-left">
-                <div className="flex items-start justify-between mb-3">
-                  <span className="text-4xl">{item.icon}</span>
-                  {item.badge && (
-                    <span className="text-xs text-accent bg-accent/10 px-2 py-0.5 rounded-full font-medium">
-                      {item.badge}
-                    </span>
-                  )}
-                </div>
-                <h3 className="font-bold text-white text-base mb-0.5">{item.title}</h3>
-                <p className="text-white/40 text-xs mb-3">{item.sub}</p>
-                <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-white/40 text-xs mt-8">
-            ⚠️ 既存の漫画・アニメキャラクターの提供はありません。著作権のある作品の二次利用は行いません。
-          </p>
-        </div>
-      </section>
-
       {/* ── PRICING ── */}
       <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
