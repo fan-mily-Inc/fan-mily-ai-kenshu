@@ -348,51 +348,106 @@ export default function AikataPage() {
 
       {/* ── PRICING ── */}
       <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">PRICING</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 leading-snug">
-              シンプルな、ひとつのプランから
+              あなたに合った導入スタイルを
             </h2>
+            <p className="text-gray-500 mt-3 text-sm">すべてのプランにキャラクター1体・Discord/Slack連携が含まれます</p>
           </div>
 
-          {/* Base plan */}
-          <div className="bg-light rounded-2xl border-2 border-accent p-8 sm:p-10 mb-8">
-            <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
-              <h3 className="text-xl font-bold text-navy-900">ベースプラン</h3>
-              <span className="text-xs text-accent bg-accent/10 px-3 py-1 rounded-full font-semibold">おすすめ</span>
-            </div>
-            <div className="flex flex-wrap gap-8 mb-6">
-              <div>
+          {/* Plan cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {/* Plan A: Full Managed */}
+            <div className="bg-light rounded-2xl border-2 border-accent p-8 relative">
+              <span className="absolute -top-3 left-6 text-xs text-white bg-accent px-3 py-1 rounded-full font-semibold">人気No.1</span>
+              <h3 className="text-lg font-bold text-navy-900 mb-1">フルマネージドプラン</h3>
+              <p className="text-xs text-gray-400 mb-5">fan-mily が API・サーバーをすべて管理</p>
+              <div className="mb-4">
                 <p className="text-gray-400 text-xs mb-1">初期構築費（1回のみ）</p>
                 <p className="text-3xl font-black text-navy-900">¥25,000</p>
               </div>
-              <div>
+              <div className="mb-6">
                 <p className="text-gray-400 text-xs mb-1">月額利用料</p>
-                <p className="text-3xl font-black text-navy-900">¥5,000<span className="text-base font-normal text-gray-400">/月</span></p>
+                <p className="text-3xl font-black text-navy-900">¥8,000〜15,000<span className="text-base font-normal text-gray-400">/月</span></p>
               </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                {[
+                  "API利用料込み — 追加課金なし",
+                  "サーバー運用・保守おまかせ",
+                  "ツール連携セットアップ込み",
+                  "マニュアル・テンプレート提供",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <AccentDot />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-gray-400 mt-4">※ 月額は利用量に応じて変動します</p>
             </div>
-            <ul className="space-y-2 text-sm text-gray-600">
-              {[
-                "キャラクター1体",
-                "標準4機能（メール / バックオフィス / タスク管理 / 補助金ウォッチ）",
-                "Discord または Slack 連携",
-                "マニュアル・テンプレートの提供",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <AccentDot />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-xs text-gray-400 mt-4">
-              セルフサーブ型のため、サポートMTGはオプションでのご提供となります。
-            </p>
+
+            {/* Plan B: BYOK */}
+            <div className="bg-light rounded-2xl border border-gray-200 p-8">
+              <h3 className="text-lg font-bold text-navy-900 mb-1">BYOK プラン</h3>
+              <p className="text-xs text-gray-400 mb-5">お持ちの Claude アカウントを接続</p>
+              <div className="mb-4">
+                <p className="text-gray-400 text-xs mb-1">初期構築費（1回のみ）</p>
+                <p className="text-3xl font-black text-navy-900">¥25,000</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-gray-400 text-xs mb-1">月額利用料</p>
+                <p className="text-3xl font-black text-navy-900">¥3,000〜5,000<span className="text-base font-normal text-gray-400">/月</span></p>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                {[
+                  "自分の API キーを使用",
+                  "サーバー運用・保守おまかせ",
+                  "ツール連携セットアップ込み",
+                  "マニュアル・テンプレート提供",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <AccentDot />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-gray-400 mt-4">※ 別途 Anthropic API 利用料がかかります</p>
+            </div>
+
+            {/* Plan C: Buy-out */}
+            <div className="bg-light rounded-2xl border border-gray-200 p-8">
+              <h3 className="text-lg font-bold text-navy-900 mb-1">買い切りプラン</h3>
+              <p className="text-xs text-gray-400 mb-5">構築後はすべて自社で運用</p>
+              <div className="mb-4">
+                <p className="text-gray-400 text-xs mb-1">一括料金</p>
+                <p className="text-3xl font-black text-navy-900">¥100,000</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-gray-400 text-xs mb-1">月額利用料</p>
+                <p className="text-3xl font-black text-navy-900">¥0</p>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                {[
+                  "エージェント構築＋納品",
+                  "セットアップ手順書付き",
+                  "サーバーは自社で用意",
+                  "納品後のサポートはオプション",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <AccentDot />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-gray-400 mt-4">※ 別途 API 利用料・サーバー費用がかかります</p>
+            </div>
           </div>
 
           {/* Options */}
-          <div className="bg-light rounded-2xl border border-gray-100 p-8">
-            <h3 className="font-bold text-navy-900 mb-4">サポートオプション</h3>
+          <div className="bg-light rounded-2xl border border-gray-100 p-8 max-w-3xl mx-auto">
+            <h3 className="font-bold text-navy-900 mb-4">サポートオプション（全プラン共通）</h3>
             <div className="space-y-3 text-sm">
               {[
                 { name: "月次サポート顧問", price: "¥10,000/月", desc: "月120分MTG＋チャット質問対応" },
@@ -412,6 +467,47 @@ export default function AikataPage() {
         </div>
       </section>
 
+      {/* ── TERMS ── */}
+      <section className="py-20 sm:py-28 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block text-accent font-semibold text-sm tracking-widest mb-4">TERMS</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy-900">ご利用にあたって</h2>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                icon: "📋",
+                title: "キャラクター設定はお客様の責任です",
+                desc: "AIKATAではお客様自身がキャラクターの名前・設定を自由にカスタマイズできます。設定内容についてはお客様の責任となります。第三者の著作権・商標権を侵害するキャラクター設定はご遠慮ください。",
+              },
+              {
+                icon: "🏢",
+                title: "社内利用を前提としたサービスです",
+                desc: "AIKATAは、導入企業の社内業務効率化を目的としたサービスです。AIキャラクターを社外向けサービスとして再販・公開することはできません。",
+              },
+              {
+                icon: "🛡️",
+                title: "権利者からの申告に迅速に対応します",
+                desc: "万が一、著作権・商標権等の侵害に関するご指摘があった場合は、速やかに該当コンテンツの停止・削除を行います。権利者の方は support@fan-mily.com までご連絡ください。",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white rounded-xl border border-gray-100 p-6 flex gap-4">
+                <span className="text-2xl shrink-0">{item.icon}</span>
+                <div>
+                  <p className="font-bold text-navy-900 text-sm mb-2">{item.title}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-gray-400 text-center mt-6">
+            ※ 正式な利用規約はサービス開始時に公開予定です。弁護士監修のもと整備を進めています。
+          </p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="py-20 sm:py-28 bg-light">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -427,7 +523,7 @@ export default function AikataPage() {
               { q: "プログラミングの知識は必要ですか?", a: "不要です。Discord/Slackの基本操作ができれば使えます。" },
               { q: "NotionやGoogleなどのツールと連携できますか?", a: "はい。主要なツールはMCP連携で対応可能です。詳細は事前登録者向けに順次公開します。" },
               { q: "解約はいつでもできますか?", a: "はい、月単位でいつでも解約可能です。違約金もありません。" },
-              { q: "既存のキャラ（ワンピース・ナルトなど）は使えますか?", a: "著作権の関係で提供していません。代わりに、オリジナルキャラと歴史上の偉人をご用意しています。" },
+              { q: "既存のキャラ（ワンピース・ナルトなど）は使えますか?", a: "著作権の関係でfan-milyからは提供していません。お客様ご自身でオリジナルキャラクターを自由に設定できますが、第三者の著作権を侵害する設定はご遠慮ください。詳しくは「ご利用にあたって」をご覧ください。" },
               { q: "サービス開始はいつですか?", a: "事前登録者には、サービス開始時に最優先でご案内いたします。" },
             ].map((item) => (
               <div key={item.q} className="bg-white rounded-xl border border-gray-100 p-6">
